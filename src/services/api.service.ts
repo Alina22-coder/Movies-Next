@@ -35,3 +35,19 @@ export const getGenreById = async (genreId: number) => {
   const genre = data.genres.find((item: IGenre) => item.id === genreId);
   return genre;
 };
+
+// movie lists (now playing, popular, top rated, upcoming)
+
+export const getMoviesByCategory = async (endpoint: string) => {
+  const response = await fetch(
+    `${TMDB_BASE_URL}/movie/${endpoint}?api_key=${TMDB_API_KEY}`,
+  );
+  const data = await response.json();
+  console.log("[CATEGORY]", endpoint, data);
+  return data;
+};
+
+getMoviesByCategory("now_playing");
+getMoviesByCategory("popular");
+getMoviesByCategory("top_rated");
+getMoviesByCategory("upcoming");

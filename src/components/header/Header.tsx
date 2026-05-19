@@ -51,7 +51,6 @@ export const Header = () => {
           </svg>
         </div>
       </Link>
-
       {/* logo end */}
 
       <div className="nav">
@@ -84,7 +83,7 @@ export const Header = () => {
       </div>
 
       <div className="account">
-        <img src="" alt="photo" />
+        {/* <img src="react.svg" alt="photo" /> */}
         NAME
       </div>
 
