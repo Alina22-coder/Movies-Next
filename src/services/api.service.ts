@@ -9,3 +9,12 @@ export const getMovies = async () => {
   console.log(data);
   return data;
 };
+
+export const getGenres = async () => {
+  const response = await fetch(
+    `${TMDB_BASE_URL}/genre/movie/list?api_key=${TMDB_API_KEY}`,
+  );
+  const data = await response.json();
+  console.log(data);
+  return data;
+};
