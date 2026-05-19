@@ -16,8 +16,8 @@ export const Header = () => {
           >
             <defs>
               <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#00D4FF" />
-                <stop offset="100%" stop-color="#7B2FFF" />
+                <stop offset="0%" stopColor="#00D4FF" />
+                <stop offset="100%" stopColor="#7B2FFF" />
               </linearGradient>
             </defs>
 
@@ -29,10 +29,10 @@ export const Header = () => {
             <text
               x="38"
               y="34"
-              font-family="'Inter','Helvetica Neue',Arial,sans-serif"
-              font-size="30"
-              font-weight="900"
-              letter-spacing="3"
+              fontFamily="'Inter','Helvetica Neue',Arial,sans-serif"
+              fontSize="30"
+              fontWeight="900"
+              letterSpacing="3"
               fill="url(#g1)"
             >
               MO
@@ -40,10 +40,10 @@ export const Header = () => {
             <text
               x="96"
               y="34"
-              font-family="'Inter','Helvetica Neue',Arial,sans-serif"
-              font-size="30"
-              font-weight="300"
-              letter-spacing="3"
+              fontFamily="'Inter','Helvetica Neue',Arial,sans-serif"
+              fontSize="30"
+              fontWeight="300"
+              letterSpacing="3"
               fill="#ffffff"
             >
               VA
@@ -59,28 +59,33 @@ export const Header = () => {
           <li className="nav__item">
             <Link to="/movies">Movies</Link>
           </li>
-          <li className="nav__item">
+          {/* <li className="nav__item">
             <Link to="/tv-shows">TV Schows</Link>
-          </li>
-          <li className="nav__item">
+          </li> */}
+          {/* <li className="nav__item">
             <Link to="/music">Music</Link>
-          </li>
-          <li className="nav__item">
+          </li> */}
+          {/* <li className="nav__item">
             <Link to="/music">Audiobooks</Link>
-          </li>
-          <li className="nav__item">
+          </li> */}
+          {/* <li className="nav__item">
             <Link to="/music">Games</Link>
-          </li>
-          <li className="nav__item">
+          </li> */}
+          {/* <li className="nav__item">
             <Link to="/music">Apps</Link>
           </li>
           <li className="nav__item">
             <Link to="/music">Updates</Link>
-          </li>
+          </li> */}
           <li className="nav__item">
             <Link to="/genres">Genres</Link>
           </li>
         </ul>
+      </div>
+
+      <div className="account">
+        <img src="" alt="photo" />
+        NAME
       </div>
 
       {/* <div>

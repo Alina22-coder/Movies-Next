@@ -59,13 +59,16 @@
 }
 
 body {
+  color: #fff;
+  margin: 0;
+  padding: 20px 40px;
+  background: #0f0f0f;
 }
 
 h1,
 h2 {
   font-family: var(--heading);
   font-weight: 500;
-  color: var(--text-h);
 }
 
 h1 {
@@ -88,6 +91,10 @@ h2 {
 }
 
 /* ----------my styles---------- */
+
+ul {
+  padding: 0;
+}
 
 li {
   list-style: none;
