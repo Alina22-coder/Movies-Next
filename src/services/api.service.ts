@@ -1,4 +1,5 @@
 import { IGenre } from "../models/IGenre";
+import { IUser } from "../models/IUser";
 
 const TMDB_BASE_URL = "https://api.themoviedb.org/3";
 const TMDB_API_KEY = "fa39114f714a203d93b48f5a86b11906";
@@ -51,3 +52,12 @@ getMoviesByCategory("now_playing");
 getMoviesByCategory("popular");
 getMoviesByCategory("top_rated");
 getMoviesByCategory("upcoming");
+
+// export const getUserById = async (account_id: number) => {
+//   const response = await fetch(
+//     `${TMDB_BASE_URL}/account/${account_id}?api_key=${TMDB_API_KEY}`,
+//   );
+//   const user: IUser = await response.json();
+//   return user;
+// };
+// getUserById(548);
