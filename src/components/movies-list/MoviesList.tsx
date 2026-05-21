@@ -1,20 +1,15 @@
-import { useState, useEffect } from "react";
-import { getMovies } from "../../services/api.service";
+import { FC } from "react";
 import { IMovie } from "../../models/IMovie";
-import { MoviesListCard } from "../movies-list-card/MoviesListCard";
 import { IGenre } from "../../models/IGenre";
-import { getGenres } from "../../services/api.service";
+import { MoviesListCard } from "../movies-list-card/MoviesListCard";
 import "./MoviesList.css";
 
-export const MoviesList = () => {
-  const [movies, setMovies] = useState<IMovie[]>([]);
-  const [genres, setGenres] = useState<IGenre[]>([]);
+type MoviesListProps = {
+  movies: IMovie[];
+  genres: IGenre[];
+};
 
-  useEffect(() => {
-    getMovies().then((data) => setMovies(data.results));
-    getGenres().then(setGenres);
-  }, []);
-
+export const MoviesList: FC<MoviesListProps> = ({ movies, genres }) => {
   return (
     <div className="cards">
       {movies.map((movie) => (

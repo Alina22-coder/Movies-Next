@@ -1,0 +1,57 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 15px;
+  background: #1a1a1a;
+  transition:
+    background 0.2s,
+    border-color 0.2s ease;
+}
+
+.card:hover {
+  background: #272727;
+  border-color: #007aff;
+  transform: scale(1.01);
+  transition:
+    background 0.2s,
+    border-color 0.2s ease;
+}
+
+.card a {
+  display: flex;
+  flex-direction: column;
+  /* flex: 1; */
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 10px;
+  gap: 8px;
+}
+
+.card__title {
+  font-weight: 700;
+  margin: 0;
+  white-space: normal;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.genres {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 5px;
+  overflow: hidden;
+}
+
+.genres > * {
+  flex-shrink: 0;
+}

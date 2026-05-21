@@ -1,38 +1,39 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getMoviesByGenre, getGenres } from "../../services/api.service";
 import { IMovie } from "../../models/IMovie";
-import { MoviesListCard } from "../movies-list-card/MoviesListCard";
 import { IGenre } from "../../models/IGenre";
+import { getMoviesByGenre, getGenres } from "../../services/api.service";
+import { MoviesListCard } from "../movies-list-card/MoviesListCard";
+import styles from "./Genre.module.css";
 
 export const Genre = () => {
-  const { id } = useParams();
-
+  const { id } = useParams<{ id: string }>();
   const [movies, setMovies] = useState<IMovie[]>([]);
   const [genres, setGenres] = useState<IGenre[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getMoviesByGenre(id).then((data) => {
-      setMovies(data.results);
+    if (!id) return;
+    setLoading(true);
+    Promise.all([getMoviesByGenre(id), getGenres()]).then(([movieData, genreData]) => {
+      setMovies(movieData.results);
+      setGenres(genreData);
+      setLoading(false);
     });
-    getGenres().then(setGenres);
   }, [id]);
-  const genreName = genres.find((g) => g.id === Number(id))?.name;
+
+  const genreName = genres.find((g) => g.id === Number(id))?.name ?? "";
+
+  if (loading) return <p className={styles.loading}>Loading...</p>;
 
   return (
     <div>
-      <h1>{genreName}</h1>
-      {movies.map((movie) => (
-        // <div key={movie.id}>
-        //   {movie.id} - {movie.title}
-        //   <div>
-        //     <PosterPreview posterPath={movie.poster_path} title={movie.title} />
-        //   </div>
-        //   <StarsRating rating={movie.vote_average} />
-        // </div>
-
-        <MoviesListCard key={movie.id} movie={movie} genres={genres} />
-      ))}
+      <h1 className={styles.heading}>{genreName}</h1>
+      <div className={styles.grid}>
+        {movies.map((movie) => (
+          <MoviesListCard key={movie.id} movie={movie} genres={genres} />
+        ))}
+      </div>
     </div>
   );
 };

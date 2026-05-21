@@ -1,25 +1,28 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { IGenre } from "../../models/IGenre";
 import { getGenres } from "../../services/api.service";
-import { Link } from "react-router-dom";
+import styles from "./Genres.module.css";
 
 export const Genres = () => {
   const [genres, setGenres] = useState<IGenre[]>([]);
 
   useEffect(() => {
-    getGenres().then((data) => setGenres(data));
+    getGenres().then(setGenres);
   }, []);
-  return (
-    <div className="genres">
-      <p>genres</p>
 
-      {genres.map((genre) => (
-        <div key={genre.id}>
-          <Link to={`/genre/${genre.id}`}>
-            {genre.id} - {genre.name}
-          </Link>
-        </div>
-      ))}
+  return (
+    <div>
+      <h1 className={styles.heading}>Genres</h1>
+      <div className={styles.grid}>
+        {genres.map((genre) => (
+          <div key={genre.id} className={styles.card}>
+            <Link to={`/genre/${genre.id}`} className={styles.link}>
+              {genre.name}
+            </Link>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

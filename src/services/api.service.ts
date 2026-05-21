@@ -1,12 +1,11 @@
 import { IGenre } from "../models/IGenre";
-import { IUser } from "../models/IUser";
 
 const TMDB_BASE_URL = "https://api.themoviedb.org/3";
 const TMDB_API_KEY = "fa39114f714a203d93b48f5a86b11906";
 
-export const getMovies = async () => {
+export const getMovies = async (page = 1) => {
   const response = await fetch(
-    `${TMDB_BASE_URL}/discover/movie?api_key=${TMDB_API_KEY}`,
+    `${TMDB_BASE_URL}/discover/movie?api_key=${TMDB_API_KEY}&page=${page}`,
   );
   const data = await response.json();
   return data;
@@ -15,6 +14,14 @@ export const getMovies = async () => {
 export const getMoviesByGenre = async (genreId: number | string) => {
   const response = await fetch(
     `${TMDB_BASE_URL}/discover/movie?api_key=${TMDB_API_KEY}&with_genres=${genreId}`,
+  );
+
+  return await response.json();
+};
+
+export const getMovieById = async (movieId: number | string) => {
+  const response = await fetch(
+    `${TMDB_BASE_URL}/movie/${movieId}?api_key=${TMDB_API_KEY}`,
   );
 
   return await response.json();
@@ -37,21 +44,19 @@ export const getGenreById = async (genreId: number) => {
   return genre;
 };
 
-// movie lists (now playing, popular, top rated, upcoming)
-
 export const getMoviesByCategory = async (endpoint: string) => {
   const response = await fetch(
     `${TMDB_BASE_URL}/movie/${endpoint}?api_key=${TMDB_API_KEY}`,
   );
-  const data = await response.json();
-  console.log("[CATEGORY]", endpoint, data);
-  return data;
+  return await response.json();
 };
 
-getMoviesByCategory("now_playing");
-getMoviesByCategory("popular");
-getMoviesByCategory("top_rated");
-getMoviesByCategory("upcoming");
+export const searchMovies = async (query: string, page = 1) => {
+  const response = await fetch(
+    `${TMDB_BASE_URL}/search/movie?api_key=${TMDB_API_KEY}&query=${encodeURIComponent(query)}&page=${page}`,
+  );
+  return await response.json();
+};
 
 // export const getUserById = async (account_id: number) => {
 //   const response = await fetch(

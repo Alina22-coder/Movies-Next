@@ -1,0 +1,11 @@
+.category {
+  /* background: lightgrey; */
+}
+
+.category__title {
+  margin-bottom: 16px;
+}
+
+.category__wrap {
+  margin-bottom: 50px;
+}

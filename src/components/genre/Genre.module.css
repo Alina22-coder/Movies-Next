@@ -1,0 +1,30 @@
+.heading {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 24px;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.grid > * {
+  width: calc(25% - 15px);
+
+  @media (max-width: 1024px) {
+    width: calc(33.333% - 14px);
+  }
+
+  @media (max-width: 640px) {
+    width: calc(50% - 10px);
+  }
+}
+
+.loading {
+  color: #888;
+  font-size: 16px;
+  padding: 40px 0;
+}

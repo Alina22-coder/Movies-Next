@@ -1,5 +1,7 @@
 .poster-preview {
   width: 100%;
-  height: auto;
+  max-height: 400px;
   object-fit: cover;
+  border-radius: 15px 15px 0 0;
+  display: block;
 }

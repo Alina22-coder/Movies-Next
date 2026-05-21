@@ -1,8 +1,10 @@
+import styles from "./UserInfo.module.css";
+
 export const UserInfo = () => {
   return (
-    <div>
-      <img src="" alt="" />
-      <p>name</p>
+    <div className={styles.container}>
+      <div className={styles.avatar}>A</div>
+      <span className={styles.name}>Alina</span>
     </div>
   );
 };
