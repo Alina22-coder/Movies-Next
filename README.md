@@ -1,16 +1,91 @@
-# React + Vite
+# Movies React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Застосунок для перегляду фільмів на основі [TMDB API](https://www.themoviedb.org/), побудований на React + TypeScript + Vite.
 
-Currently, two official plugins are available:
+## Можливості
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Перегляд фільмів за категоріями: зараз у прокаті, популярні, топ рейтингу, очікувані
+- Пошук фільмів з пагінацією
+- Перегляд фільмів за жанрами
+- Детальна сторінка кожного фільму
+- Автентифікація через TMDB OAuth (вхід / вихід, відображення профілю)
 
-## React Compiler
+## Технології
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 19** + **TypeScript**
+- **Vite** — збірка
+- **React Router v7** — маршрутизація
+- **React Hook Form** — форми
+- **Swiper** — каруселі на головній сторінці
+- **Context API** — управління станом авторизації
+- **TMDB API** — джерело даних
 
-## Expanding the ESLint configuration
+## Структура проекту
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+src/
+├── components/        # UI-компоненти (header, footer, картки фільмів тощо)
+├── pages/             # Сторінки (MoviesPage, MovieInfoPage, AuthCallbackPage)
+├── services/          # API-сервіс (TMDB)
+├── context/           # AuthContext — стан авторизації
+├── models/            # TypeScript-інтерфейси (IMovie, IUser, IGenre)
+└── routers/           # Конфігурація маршрутів
+```
+
+## Маршрути
+
+| Шлях | Сторінка |
+|------|----------|
+| `/` | Головна (каруселі за категоріями) |
+| `/movies` | Список фільмів + пошук |
+| `/movie/:id` | Деталі фільму |
+| `/genres` | Список жанрів |
+| `/genre/:id` | Фільми за жанром |
+| `/auth/callback` | OAuth-колбек TMDB |
+
+## Запуск
+
+### 1. Клонування репозиторію
+
+```bash
+git clone <repo-url>
+cd Movies-React
+```
+
+### 2. Встановлення залежностей
+
+```bash
+npm install
+```
+
+### 3. Налаштування змінних середовища
+
+Створіть файл `.env` у корені проекту (на основі `.env.example`):
+
+```env
+VITE_TMDB_TOKEN=your_tmdb_bearer_token
+```
+
+Токен можна отримати на [TMDB → Settings → API](https://www.themoviedb.org/settings/api).
+
+### 4. Запуск у режимі розробки
+
+```bash
+npm run dev
+```
+
+### 5. Збірка для production
+
+```bash
+npm run build
+npm run preview
+```
+
+## Авторизація
+
+Застосунок використовує TMDB OAuth 2.0:
+
+1. Натисніть **Login** — відбудеться редирект на TMDB для підтвердження
+2. Після підтвердження TMDB перенаправить назад на `/auth/callback`
+3. Сесія зберігається в `localStorage` (`tmdb_session_id`, `tmdb_request_token`)
+4. Для виходу натисніть **Logout**
