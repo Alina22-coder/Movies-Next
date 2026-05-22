@@ -5,6 +5,7 @@ import { Genres } from "../components/genres/Genres";
 import { Genre } from "../components/genre/Genre";
 import { Home } from "../components/home/Home";
 import { MovieInfoPage } from "../pages/MovieInfoPage";
+import { AuthCallbackPage } from "../pages/AuthCallbackPage";
 
 export const routes = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ export const routes = createBrowserRouter([
       {
         path: "genre/:id",
         element: <Genre />,
+      },
+      {
+        path: "auth/callback",
+        element: <AuthCallbackPage />,
       },
     ],
   },

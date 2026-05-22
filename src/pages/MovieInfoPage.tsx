@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { IMovie } from "../models/IMovie";
 import { getMovieById } from "../services/api.service";
-import { MovieInfo } from "../components/movie-info /MovieInfo";
+import { MovieInfo } from "../components/movie-info/MovieInfo";
 
 export const MovieInfoPage = () => {
   const { id } = useParams<{ id: string }>();

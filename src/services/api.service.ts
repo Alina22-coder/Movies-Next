@@ -58,11 +58,30 @@ export const searchMovies = async (query: string, page = 1) => {
   return await response.json();
 };
 
-// export const getUserById = async (account_id: number) => {
-//   const response = await fetch(
-//     `${TMDB_BASE_URL}/account/${account_id}?api_key=${TMDB_API_KEY}`,
-//   );
-//   const user: IUser = await response.json();
-//   return user;
-// };
-// getUserById(548);
+export const createRequestToken = async (): Promise<string> => {
+  const response = await fetch(
+    `${TMDB_BASE_URL}/authentication/token/new?api_key=${TMDB_API_KEY}`,
+  );
+  const data = await response.json();
+  return data.request_token;
+};
+
+export const createSession = async (requestToken: string): Promise<string> => {
+  const response = await fetch(
+    `${TMDB_BASE_URL}/authentication/session/new?api_key=${TMDB_API_KEY}`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ request_token: requestToken }),
+    },
+  );
+  const data = await response.json();
+  return data.session_id;
+};
+
+export const getAccount = async (sessionId: string) => {
+  const response = await fetch(
+    `${TMDB_BASE_URL}/account?api_key=${TMDB_API_KEY}&session_id=${sessionId}`,
+  );
+  return await response.json();
+};
