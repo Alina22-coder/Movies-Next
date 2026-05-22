@@ -1,11 +1,16 @@
 import { IGenre } from "../models/IGenre";
 
 const TMDB_BASE_URL = "https://api.themoviedb.org/3";
-const TMDB_API_KEY = "fa39114f714a203d93b48f5a86b11906";
+const TMDB_TOKEN = import.meta.env.VITE_TMDB_TOKEN as string;
+
+const authHeaders = {
+  Authorization: `Bearer ${TMDB_TOKEN}`,
+};
 
 export const getMovies = async (page = 1) => {
   const response = await fetch(
-    `${TMDB_BASE_URL}/discover/movie?api_key=${TMDB_API_KEY}&page=${page}`,
+    `${TMDB_BASE_URL}/discover/movie?page=${page}`,
+    { headers: authHeaders },
   );
   const data = await response.json();
   return data;
@@ -13,23 +18,24 @@ export const getMovies = async (page = 1) => {
 
 export const getMoviesByGenre = async (genreId: number | string) => {
   const response = await fetch(
-    `${TMDB_BASE_URL}/discover/movie?api_key=${TMDB_API_KEY}&with_genres=${genreId}`,
+    `${TMDB_BASE_URL}/discover/movie?with_genres=${genreId}`,
+    { headers: authHeaders },
   );
-
   return await response.json();
 };
 
 export const getMovieById = async (movieId: number | string) => {
   const response = await fetch(
-    `${TMDB_BASE_URL}/movie/${movieId}?api_key=${TMDB_API_KEY}`,
+    `${TMDB_BASE_URL}/movie/${movieId}`,
+    { headers: authHeaders },
   );
-
   return await response.json();
 };
 
 export const getGenres = async (): Promise<IGenre[]> => {
   const response = await fetch(
-    `${TMDB_BASE_URL}/genre/movie/list?api_key=${TMDB_API_KEY}`,
+    `${TMDB_BASE_URL}/genre/movie/list`,
+    { headers: authHeaders },
   );
   const data = await response.json();
   return data.genres;
@@ -37,7 +43,8 @@ export const getGenres = async (): Promise<IGenre[]> => {
 
 export const getGenreById = async (genreId: number) => {
   const response = await fetch(
-    `${TMDB_BASE_URL}/genre/movie/list?api_key=${TMDB_API_KEY}`,
+    `${TMDB_BASE_URL}/genre/movie/list`,
+    { headers: authHeaders },
   );
   const data = await response.json();
   const genre = data.genres.find((item: IGenre) => item.id === genreId);
@@ -46,42 +53,52 @@ export const getGenreById = async (genreId: number) => {
 
 export const getMoviesByCategory = async (endpoint: string) => {
   const response = await fetch(
-    `${TMDB_BASE_URL}/movie/${endpoint}?api_key=${TMDB_API_KEY}`,
+    `${TMDB_BASE_URL}/movie/${endpoint}`,
+    { headers: authHeaders },
   );
   return await response.json();
 };
 
 export const searchMovies = async (query: string, page = 1) => {
   const response = await fetch(
-    `${TMDB_BASE_URL}/search/movie?api_key=${TMDB_API_KEY}&query=${encodeURIComponent(query)}&page=${page}`,
+    `${TMDB_BASE_URL}/search/movie?query=${encodeURIComponent(query)}&page=${page}`,
+    { headers: authHeaders },
   );
   return await response.json();
 };
 
 export const createRequestToken = async (): Promise<string> => {
   const response = await fetch(
-    `${TMDB_BASE_URL}/authentication/token/new?api_key=${TMDB_API_KEY}`,
+    `${TMDB_BASE_URL}/authentication/token/new`,
+    { headers: authHeaders },
   );
   const data = await response.json();
+  if (!data.success || !data.request_token) {
+    throw new Error(data.status_message ?? "Failed to create request token");
+  }
   return data.request_token;
 };
 
 export const createSession = async (requestToken: string): Promise<string> => {
   const response = await fetch(
-    `${TMDB_BASE_URL}/authentication/session/new?api_key=${TMDB_API_KEY}`,
+    `${TMDB_BASE_URL}/authentication/session/new`,
     {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { ...authHeaders, "Content-Type": "application/json" },
       body: JSON.stringify({ request_token: requestToken }),
     },
   );
   const data = await response.json();
+  if (!data.success || !data.session_id) {
+    throw new Error(data.status_message ?? "Failed to create session");
+  }
   return data.session_id;
 };
 
 export const getAccount = async (sessionId: string) => {
   const response = await fetch(
-    `${TMDB_BASE_URL}/account?api_key=${TMDB_API_KEY}&session_id=${sessionId}`,
+    `${TMDB_BASE_URL}/account?session_id=${sessionId}`,
+    { headers: authHeaders },
   );
   return await response.json();
 };

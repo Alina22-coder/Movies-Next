@@ -25,13 +25,13 @@ export const MoviesPage = () => {
   useEffect(() => {
     if (query.trim()) {
       searchMovies(query, page).then((data) => {
-        setMovies(data.results);
-        setTotalPages(data.total_pages);
+        setMovies(data.results ?? []);
+        setTotalPages(data.total_pages ?? 1);
       });
     } else {
       getMovies(page).then((data) => {
-        setMovies(data.results);
-        setTotalPages(data.total_pages);
+        setMovies(data.results ?? []);
+        setTotalPages(data.total_pages ?? 1);
       });
     }
   }, [query, page]);
