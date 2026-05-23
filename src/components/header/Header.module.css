@@ -42,7 +42,7 @@
 
 .nav__link_active {
   color: #fff;
-  border-bottom: 2px solid #007AFF;
+  border-bottom: 2px solid #007aff;
   padding-bottom: 2px;
 }
 
@@ -61,7 +61,7 @@
 }
 
 .search:focus {
-  border-color: #007AFF;
+  border-color: #007aff;
 }
 
 .search::placeholder {
@@ -70,13 +70,27 @@
 
 @media (max-width: 600px) {
   .header {
-    gap: 12px;
-    row-gap: 10px;
+    gap: 8px;
+    row-gap: 8px;
+  }
+
+  .nav {
+    margin-left: 0;
+  }
+
+  .nav__link {
+    font-size: 13px;
   }
 
   .search {
     order: 3;
     width: 100%;
     margin-left: 0;
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .userInfo {
+    margin-left: auto;
   }
 }

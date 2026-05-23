@@ -1,13 +1,6 @@
 export const StarsRating = ({ rating }: { rating: number }) => {
   const stars = Math.round(rating / 2);
   return (
-    // <span>
-    //   {Array.from({ length: 5 }, (_, i) => (
-    //     <span key={i} style={{ color: i < stars ? "gold" : "#ccc", fontSize: 18 }}>
-    //       ★
-    //     </span>
-    //   ))}
-    // </span>
     <span style={{ display: "flex", gap: "4px" }}>
       {Array.from({ length: 5 }, (_, i) => (
         <svg

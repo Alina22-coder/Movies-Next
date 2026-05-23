@@ -1,3 +1,70 @@
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 20px 0 16px;
+}
+
+.genreBtn {
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1px solid #444;
+  background: #1c1c1c;
+  color: #ccc;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+
+.genreBtn:hover {
+  border-color: #007AFF;
+  color: #fff;
+}
+
+.genreBtn.active {
+  background: #007AFF;
+  border-color: #007AFF;
+  color: #fff;
+}
+
+.genreSelect {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .genres {
+    display: none;
+  }
+
+  .genreSelect {
+    display: block;
+    width: auto;
+    padding: 8px 12px;
+    margin: 12px 0;
+    border-radius: 8px;
+    border: 1px solid #444;
+    background: #1c1c1c;
+    color: #fff;
+    font-size: 13px;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .genreSelect:focus {
+    border-color: #007AFF;
+  }
+
+  .btn {
+    font-size: 12px;
+    padding: 6px 14px;
+  }
+
+  .page {
+    font-size: 12px;
+  }
+}
+
 .buttons {
   display: flex;
   justify-content: center;

@@ -74,16 +74,6 @@ export const Header = () => {
               Movies
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              to="/genres"
-              className={({ isActive }) =>
-                `${styles.nav__link} ${isActive ? styles.nav__link_active : ""}`
-              }
-            >
-              Genres
-            </NavLink>
-          </li>
         </ul>
       </nav>
 
@@ -95,7 +85,9 @@ export const Header = () => {
         className={styles.search}
       />
 
-      <UserInfo />
+      <div className={styles.userInfo}>
+        <UserInfo />
+      </div>
     </header>
   );
 };

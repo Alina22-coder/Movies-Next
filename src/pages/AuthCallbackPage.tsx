@@ -20,5 +20,5 @@ export const AuthCallbackPage = () => {
     handleCallback(token).finally(() => navigate("/"));
   }, []);
 
-  return <p style={{ padding: "2rem" }}>Авторизація...</p>;
+  return <p style={{ padding: "2rem" }}>Signing in...</p>;
 };

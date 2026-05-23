@@ -28,7 +28,7 @@ export const MoviesListCard: FC<MoviesListCardPropType> = ({
 
           {genres && (
             <div className={styles.genres}>
-              {movieGenres.map((genre) => (
+              {movieGenres.slice(0, 2).map((genre) => (
                 <GenreBadge key={genre.id} id={genre.id} name={genre.name} />
               ))}
             </div>

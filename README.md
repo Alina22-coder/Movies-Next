@@ -24,7 +24,19 @@
 
 ```
 src/
-├── components/        # UI-компоненти (header, footer, картки фільмів тощо)
+├── components/
+│   ├── header/            # Хедер з навігацією та авторизацією
+│   ├── footer/            # Футер
+│   ├── home/              # Головна сторінка з каруселями
+│   ├── movies-list/       # Список фільмів
+│   ├── movies-list-card/  # Картка фільму
+│   ├── movie-info/        # Деталі фільму
+│   ├── genres/            # Список жанрів
+│   ├── genre/             # Фільми за жанром
+│   ├── genre-badge/       # Бейдж жанру
+│   ├── poster-preview/    # Попередній перегляд постера
+│   ├── stars-rating/      # Зіркові рейтинги
+│   └── user-info/         # Інформація про користувача
 ├── pages/             # Сторінки (MoviesPage, MovieInfoPage, AuthCallbackPage)
 ├── services/          # API-сервіс (TMDB)
 ├── context/           # AuthContext — стан авторизації

@@ -36,8 +36,14 @@ export const Home = () => {
           <Swiper
             modules={[Navigation]}
             navigation
-            slidesPerView={6}
+            slidesPerView={2}
             spaceBetween={16}
+            breakpoints={{
+              480: { slidesPerView: 2 },
+              640: { slidesPerView: 3 },
+              900: { slidesPerView: 4 },
+              1200: { slidesPerView: 5 },
+            }}
           >
             {(moviesByCategory[key] ?? []).map((movie) => (
               <SwiperSlide key={movie.id}>

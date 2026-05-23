@@ -6,7 +6,6 @@
 }
 
 .cards > * {
-  /* width: calc(25% - 15px); */
   width: calc(20% - 16px);
   display: flex;
   flex-direction: column;

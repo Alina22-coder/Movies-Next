@@ -3,6 +3,11 @@
   font-weight: 700;
   color: #fff;
   margin: 0 0 24px;
+
+  @media (max-width: 600px) {
+    font-size: 20px;
+    margin: 0 0 16px;
+  }
 }
 
 .grid {
@@ -30,6 +35,11 @@
   font-weight: 500;
   color: #ddd;
   text-decoration: none;
+
+  @media (max-width: 600px) {
+    font-size: 13px;
+    padding: 14px 12px;
+  }
 }
 
 .card:hover .link {

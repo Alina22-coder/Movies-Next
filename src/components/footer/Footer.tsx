@@ -56,11 +56,11 @@ export const Footer = () => {
         <div className={styles.footer__cols}>
           <div className={styles.footer__col}>
             <span className={styles.footer__col_title}>Navigate</span>
+            <NavLink to="/" className={styles.footer__link}>
+              Home
+            </NavLink>
             <NavLink to="/movies" className={styles.footer__link}>
               Movies
-            </NavLink>
-            <NavLink to="/genres" className={styles.footer__link}>
-              Genres
             </NavLink>
           </div>
 

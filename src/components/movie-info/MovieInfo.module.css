@@ -8,6 +8,11 @@
     flex-direction: column;
     padding: 20px 0;
   }
+
+  @media (max-width: 600px) {
+    gap: 20px;
+    padding: 12px 0;
+  }
 }
 
 .poster {
@@ -50,6 +55,10 @@
   color: #fff;
   margin: 0 0 6px;
   line-height: 1.2;
+
+  @media (max-width: 600px) {
+    font-size: 22px;
+  }
 }
 
 .year {
@@ -62,6 +71,10 @@
   font-style: italic;
   margin: 0 0 16px;
   font-size: 15px;
+
+  @media (max-width: 600px) {
+    font-size: 13px;
+  }
 }
 
 .badges {
@@ -92,6 +105,10 @@
   font-weight: 600;
   color: #fff;
   margin: 0 0 8px;
+
+  @media (max-width: 600px) {
+    font-size: 15px;
+  }
 }
 
 .overview {
@@ -99,6 +116,10 @@
   line-height: 1.7;
   margin: 0;
   font-size: 16px;
+
+  @media (max-width: 600px) {
+    font-size: 13px;
+  }
 }
 
 .meta {
@@ -111,6 +132,10 @@
   display: flex;
   gap: 12px;
   font-size: 15px;
+
+  @media (max-width: 600px) {
+    font-size: 13px;
+  }
 }
 
 .metaLabel {
