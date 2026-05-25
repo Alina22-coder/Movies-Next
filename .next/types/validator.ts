@@ -36,46 +36,46 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
 }
 
 
-// Validate ../../src/app/auth/callback/page.tsx
-{
-  type __IsExpected<Specific extends AppPageConfig<"/auth/callback">> = Specific
-  const handler = {} as typeof import("../../src/app/auth/callback/page.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../src/app/genre/[id]/page.tsx
+// Validate ../../src/app/(public)/genre/[id]/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/genre/[id]">> = Specific
-  const handler = {} as typeof import("../../src/app/genre/[id]/page.js")
+  const handler = {} as typeof import("../../src/app/(public)/genre/[id]/page.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check
 }
 
-// Validate ../../src/app/genres/page.tsx
+// Validate ../../src/app/(public)/genres/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/genres">> = Specific
-  const handler = {} as typeof import("../../src/app/genres/page.js")
+  const handler = {} as typeof import("../../src/app/(public)/genres/page.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check
 }
 
-// Validate ../../src/app/movie/[id]/page.tsx
+// Validate ../../src/app/(public)/movie/[id]/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/movie/[id]">> = Specific
-  const handler = {} as typeof import("../../src/app/movie/[id]/page.js")
+  const handler = {} as typeof import("../../src/app/(public)/movie/[id]/page.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check
 }
 
-// Validate ../../src/app/movies/page.tsx
+// Validate ../../src/app/(public)/movies/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/movies">> = Specific
-  const handler = {} as typeof import("../../src/app/movies/page.js")
+  const handler = {} as typeof import("../../src/app/(public)/movies/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../src/app/auth/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/auth">> = Specific
+  const handler = {} as typeof import("../../src/app/auth/page.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check
@@ -95,6 +95,51 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
 
 
 
+
+// Validate ../../src/app/(public)/genre/[id]/layout.tsx
+{
+  type __IsExpected<Specific extends LayoutConfig<"/genre/[id]">> = Specific
+  const handler = {} as typeof import("../../src/app/(public)/genre/[id]/layout.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../src/app/(public)/genres/layout.tsx
+{
+  type __IsExpected<Specific extends LayoutConfig<"/genres">> = Specific
+  const handler = {} as typeof import("../../src/app/(public)/genres/layout.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../src/app/(public)/movie/[id]/layout.tsx
+{
+  type __IsExpected<Specific extends LayoutConfig<"/movie/[id]">> = Specific
+  const handler = {} as typeof import("../../src/app/(public)/movie/[id]/layout.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../src/app/(public)/movies/layout.tsx
+{
+  type __IsExpected<Specific extends LayoutConfig<"/movies">> = Specific
+  const handler = {} as typeof import("../../src/app/(public)/movies/layout.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../src/app/auth/layout.tsx
+{
+  type __IsExpected<Specific extends LayoutConfig<"/auth">> = Specific
+  const handler = {} as typeof import("../../src/app/auth/layout.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
 
 // Validate ../../src/app/layout.tsx
 {

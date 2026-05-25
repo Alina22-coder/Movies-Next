@@ -1,89 +1,65 @@
 .header {
-  background: #0f0f0f;
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  padding-bottom: 16px;
-  flex-wrap: wrap;
+    background: #0f0f0f;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 16px 0;
+    flex-wrap: wrap;
 }
 
 .logoLink {
-  flex-shrink: 0;
+    flex-shrink: 0;
 }
 
 .logo {
-  display: block;
+    display: block;
 }
 
 .nav {
-  flex-shrink: 0;
-}
-
-.navList {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  margin: 0;
-  padding: 0;
-}
-
-.navLink {
-  font-size: 15px;
-  font-weight: 500;
-  color: #aaa;
-  text-decoration: none;
-  transition: color 0.2s;
-  white-space: nowrap;
-}
-
-.navLink:hover {
-  color: #fff;
-}
-
-.navLinkActive {
-  color: #fff;
-  border-bottom: 2px solid #007aff;
-  padding-bottom: 2px;
+    flex-shrink: 0;
 }
 
 .search {
-  margin-left: auto;
-  padding: 8px 14px;
-  border-radius: 8px;
-  border: 1px solid #333;
-  background: #1a1a1a;
-  color: #fff;
-  font-size: 14px;
-  outline: none;
-  width: 220px;
-  min-width: 0;
-  transition: border-color 0.2s;
+    margin-left: auto;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    width: 220px;
+    min-width: 0;
+    transition: border-color 0.2s;
 }
 
 .search:focus {
-  border-color: #007aff;
+    border-color: #007aff;
 }
 
 .search::placeholder {
-  color: #666;
+    color: #666;
+}
+
+.userInfo {
+    flex-shrink: 0;
 }
 
 @media (max-width: 600px) {
-  .header {
-    gap: 8px;
-    row-gap: 8px;
-  }
-  .navLink {
-    font-size: 13px;
-  }
-  .search {
-    order: 3;
-    width: 100%;
-    margin-left: 0;
-    font-size: 13px;
-    padding: 6px 10px;
-  }
-  .userInfo {
-    margin-left: auto;
-  }
+    .header {
+        gap: 8px;
+        row-gap: 8px;
+    }
+
+    .search {
+        order: 3;
+        width: 100%;
+        margin-left: 0;
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+
+    .userInfo {
+        margin-left: auto;
+    }
 }

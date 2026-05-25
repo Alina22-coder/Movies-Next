@@ -74,6 +74,11 @@
   z-index: 200;
 }
 
+.dropdown form {
+  display: block;
+  width: 100%;
+}
+
 .dropdownNameMobile {
   font-size: 13px;
   color: #aaa;
@@ -108,8 +113,25 @@
   font-size: 13px;
   cursor: pointer;
   transition: background 0.2s;
+  width: 100%;
 }
 
 .dropdownLogout:hover {
+  background: #ff4d4d22;
+}
+
+.logoutBtn {
+  background: transparent;
+  color: #ff4d4d;
+  border: 1px solid #ff4d4d44;
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+}
+
+.logoutBtn:hover {
   background: #ff4d4d22;
 }

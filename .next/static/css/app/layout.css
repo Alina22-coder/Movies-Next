@@ -1,4 +1,73 @@
 /*!***********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./src/components/header/Header.module.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************/
+.Header_header__TsQ2I {
+    background: #0f0f0f;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 16px 0;
+    flex-wrap: wrap;
+}
+
+.Header_logoLink__jC9_N {
+    flex-shrink: 0;
+}
+
+.Header_logo___CXuk {
+    display: block;
+}
+
+.Header_nav__Yrfdd {
+    flex-shrink: 0;
+}
+
+.Header_search__1szDk {
+    margin-left: auto;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    width: 220px;
+    min-width: 0;
+    transition: border-color 0.2s;
+}
+
+.Header_search__1szDk:focus {
+    border-color: #007aff;
+}
+
+.Header_search__1szDk::placeholder {
+    color: #666;
+}
+
+.Header_userInfo__c2Meh {
+    flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+    .Header_header__TsQ2I {
+        gap: 8px;
+        row-gap: 8px;
+    }
+
+    .Header_search__1szDk {
+        order: 3;
+        width: 100%;
+        margin-left: 0;
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+
+    .Header_userInfo__c2Meh {
+        margin-left: auto;
+    }
+}
+
+/*!***********************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./src/components/footer/Footer.module.css ***!
   \***********************************************************************************************************************************************************************************************************************************************************************************/
 .Footer_footer__4ORg_ {
@@ -70,6 +139,7 @@
   align-items: center;
   gap: 8px;
 }
+
 
 .Footer_footerBottom__A1Xh3 {
   border-top: 1px solid #1f1f1f;
@@ -202,6 +272,37 @@ a {
   text-decoration: none;
 }
 
+/*!*******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./src/components/menu/Menu.module.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************/
+.Menu_list__0m9DG {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.Menu_list__0m9DG a {
+    font-size: 15px;
+    font-weight: 500;
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.2s;
+    white-space: nowrap;
+}
+
+.Menu_list__0m9DG a:hover {
+    color: #fff;
+}
+
+.Menu_active__C3u8h {
+    color: #fff;
+    border-bottom: 2px solid #007aff;
+    padding-bottom: 2px;
+}
+
 /*!****************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./src/components/user-info/UserInfo.module.css ***!
   \****************************************************************************************************************************************************************************************************************************************************************************************/
@@ -281,6 +382,11 @@ a {
   z-index: 200;
 }
 
+.UserInfo_dropdown__Mjm7K form {
+  display: block;
+  width: 100%;
+}
+
 .UserInfo_dropdownNameMobile__hZlF3 {
   font-size: 13px;
   color: #aaa;
@@ -315,102 +421,26 @@ a {
   font-size: 13px;
   cursor: pointer;
   transition: background 0.2s;
+  width: 100%;
 }
 
 .UserInfo_dropdownLogout__Y2SHA:hover {
   background: #ff4d4d22;
 }
 
-/*!***********************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./src/components/header/Header.module.css ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************/
-.Header_header__TsQ2I {
-  background: #0f0f0f;
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  padding-bottom: 16px;
-  flex-wrap: wrap;
+.UserInfo_logoutBtn__AN5E_ {
+  background: transparent;
+  color: #ff4d4d;
+  border: 1px solid #ff4d4d44;
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
 }
 
-.Header_logoLink__jC9_N {
-  flex-shrink: 0;
-}
-
-.Header_logo___CXuk {
-  display: block;
-}
-
-.Header_nav__Yrfdd {
-  flex-shrink: 0;
-}
-
-.Header_navList__lfQ_o {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  margin: 0;
-  padding: 0;
-}
-
-.Header_navLink__rYmd1 {
-  font-size: 15px;
-  font-weight: 500;
-  color: #aaa;
-  text-decoration: none;
-  transition: color 0.2s;
-  white-space: nowrap;
-}
-
-.Header_navLink__rYmd1:hover {
-  color: #fff;
-}
-
-.Header_navLinkActive__zwiGk {
-  color: #fff;
-  border-bottom: 2px solid #007aff;
-  padding-bottom: 2px;
-}
-
-.Header_search__1szDk {
-  margin-left: auto;
-  padding: 8px 14px;
-  border-radius: 8px;
-  border: 1px solid #333;
-  background: #1a1a1a;
-  color: #fff;
-  font-size: 14px;
-  outline: none;
-  width: 220px;
-  min-width: 0;
-  transition: border-color 0.2s;
-}
-
-.Header_search__1szDk:focus {
-  border-color: #007aff;
-}
-
-.Header_search__1szDk::placeholder {
-  color: #666;
-}
-
-@media (max-width: 600px) {
-  .Header_header__TsQ2I {
-    gap: 8px;
-    row-gap: 8px;
-  }
-  .Header_navLink__rYmd1 {
-    font-size: 13px;
-  }
-  .Header_search__1szDk {
-    order: 3;
-    width: 100%;
-    margin-left: 0;
-    font-size: 13px;
-    padding: 6px 10px;
-  }
-  .Header_userInfo__c2Meh {
-    margin-left: auto;
-  }
+.UserInfo_logoutBtn__AN5E_:hover {
+  background: #ff4d4d22;
 }
 
