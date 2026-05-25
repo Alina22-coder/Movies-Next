@@ -1,6 +1,6 @@
-# Movies React
+# MOVA — Discover Movies
 
-Застосунок для перегляду фільмів на основі [TMDB API](https://www.themoviedb.org/), побудований на React + TypeScript + Vite.
+Застосунок для перегляду фільмів на основі [TMDB API](https://www.themoviedb.org/), побудований на Next.js + TypeScript.
 
 ## Можливості
 
@@ -12,10 +12,9 @@
 
 ## Технології
 
-- **React 19** + **TypeScript**
-- **Vite** — збірка
-- **React Router v7** — маршрутизація
-- **React Hook Form** — форми
+- **Next.js 15** + **React 19** + **TypeScript**
+- **App Router** — маршрутизація та серверні компоненти
+- **CSS Modules** — стилізація компонентів
 - **Swiper** — каруселі на головній сторінці
 - **Context API** — управління станом авторизації
 - **TMDB API** — джерело даних
@@ -24,24 +23,31 @@
 
 ```
 src/
+├── app/
+│   ├── layout.tsx             # Кореневий layout (Header, Footer, AuthProvider)
+│   ├── page.tsx               # Головна сторінка (каруселі)
+│   ├── movies/                # Список фільмів + пошук
+│   │   ├── page.tsx
+│   │   └── MoviesPageClient.tsx
+│   ├── movie/[id]/            # Деталі фільму
+│   ├── genres/                # Список жанрів
+│   ├── genre/[id]/            # Фільми за жанром
+│   └── auth/callback/         # OAuth-колбек TMDB
 ├── components/
-│   ├── header/            # Хедер з навігацією та авторизацією
-│   ├── footer/            # Футер
-│   ├── home/              # Головна сторінка з каруселями
-│   ├── movies-list/       # Список фільмів
-│   ├── movies-list-card/  # Картка фільму
-│   ├── movie-info/        # Деталі фільму
-│   ├── genres/            # Список жанрів
-│   ├── genre/             # Фільми за жанром
-│   ├── genre-badge/       # Бейдж жанру
-│   ├── poster-preview/    # Попередній перегляд постера
-│   ├── stars-rating/      # Зіркові рейтинги
-│   └── user-info/         # Інформація про користувача
-├── pages/             # Сторінки (MoviesPage, MovieInfoPage, AuthCallbackPage)
-├── services/          # API-сервіс (TMDB)
-├── context/           # AuthContext — стан авторизації
-├── models/            # TypeScript-інтерфейси (IMovie, IUser, IGenre)
-└── routers/           # Конфігурація маршрутів
+│   ├── header/                # Хедер з навігацією та авторизацією
+│   ├── footer/                # Футер
+│   ├── home/                  # Головна сторінка з каруселями
+│   ├── movies-list/           # Список фільмів
+│   ├── movies-list-card/      # Картка фільму
+│   ├── movie-info/            # Деталі фільму
+│   ├── genres/                # Список жанрів
+│   ├── genre-badge/           # Бейдж жанру
+│   ├── poster-preview/        # Попередній перегляд постера
+│   ├── stars-rating/          # Зіркові рейтинги
+│   └── user-info/             # Інформація про користувача
+├── context/               # AuthContext — стан авторизації
+├── services/              # API-сервіс (TMDB)
+└── models/                # TypeScript-інтерфейси (IMovie, IUser, IGenre)
 ```
 
 ## Маршрути
@@ -61,7 +67,7 @@ src/
 
 ```bash
 git clone <repo-url>
-cd Movies-React
+cd Movies-Next
 ```
 
 ### 2. Встановлення залежностей
@@ -72,10 +78,10 @@ npm install
 
 ### 3. Налаштування змінних середовища
 
-Створіть файл `.env` у корені проекту (на основі `.env.example`):
+Створіть файл `.env.local` у корені проекту:
 
 ```env
-VITE_TMDB_TOKEN=your_tmdb_bearer_token
+NEXT_PUBLIC_TMDB_TOKEN=your_tmdb_bearer_token
 ```
 
 Токен можна отримати на [TMDB → Settings → API](https://www.themoviedb.org/settings/api).
@@ -90,7 +96,7 @@ npm run dev
 
 ```bash
 npm run build
-npm run preview
+npm run start
 ```
 
 ## Авторизація
