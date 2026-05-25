@@ -1,0 +1,35 @@
+.heading {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 24px;
+}
+
+@media (max-width: 600px) {
+  .heading {
+    font-size: 20px;
+    margin: 0 0 16px;
+  }
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.grid > * {
+  width: calc(25% - 15px);
+}
+
+@media (max-width: 1024px) {
+  .grid > * {
+    width: calc(33.333% - 14px);
+  }
+}
+
+@media (max-width: 640px) {
+  .grid > * {
+    width: calc(50% - 10px);
+  }
+}

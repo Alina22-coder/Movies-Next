@@ -1,31 +1,25 @@
-import { FC } from "react";
-import { IMovie } from "../../models/IMovie";
-import { IGenre } from "../../models/IGenre";
-import { GenreBadge } from "../genre-badge/GenreBadge";
-import { StarsRating } from "../stars-rating/StarsRating";
+import Link from "next/link";
+import { IMovie } from "@/models/IMovie";
+import { IGenre } from "@/models/IGenre";
+import { GenreBadge } from "@/components/genre-badge/GenreBadge";
+import { StarsRating } from "@/components/stars-rating/StarsRating";
+import { PosterPreview } from "@/components/poster-preview/PosterPreview";
 import styles from "./MoviesListCard.module.css";
-import { PosterPreview } from "../poster-preview/PosterPreview";
-import { Link } from "react-router-dom";
+
 type MoviesListCardPropType = {
   movie: IMovie;
   genres?: IGenre[];
 };
 
-export const MoviesListCard: FC<MoviesListCardPropType> = ({
-  movie,
-  genres,
-}) => {
-  const movieGenres =
-    genres?.filter((g) => movie.genre_ids.includes(g.id)) ?? [];
+export const MoviesListCard = ({ movie, genres }: MoviesListCardPropType) => {
+  const movieGenres = genres?.filter((g) => movie.genre_ids.includes(g.id)) ?? [];
 
   return (
     <div className={styles.card}>
-      <Link to={`/movie/${movie.id}`}>
+      <Link href={`/movie/${movie.id}`}>
         <PosterPreview posterPath={movie.poster_path} title={movie.title} />
-
-        <div className={styles["card-content"]}>
-          <p className={styles.card__title}>{movie.title}</p>
-
+        <div className={styles.cardContent}>
+          <p className={styles.cardTitle}>{movie.title}</p>
           {genres && (
             <div className={styles.genres}>
               {movieGenres.slice(0, 2).map((genre) => (
@@ -33,7 +27,6 @@ export const MoviesListCard: FC<MoviesListCardPropType> = ({
               ))}
             </div>
           )}
-
           <StarsRating rating={movie.vote_average} />
         </div>
       </Link>

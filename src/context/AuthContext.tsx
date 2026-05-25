@@ -1,6 +1,8 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import { IUser } from "../models/IUser";
-import { createRequestToken, createSession, getAccount } from "../services/api.service";
+"use client";
+
+import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import { IUser } from "@/models/IUser";
+import { createRequestToken, createSession, getAccount } from "@/services/api.service";
 
 interface AuthContextType {
   user: IUser | null;
@@ -12,11 +14,14 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | null>(null);
 
-export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
+export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<IUser | null>(null);
-  const [sessionId, setSessionId] = useState<string | null>(
-    () => localStorage.getItem("tmdb_session_id"),
-  );
+  const [sessionId, setSessionId] = useState<string | null>(null);
+
+  useEffect(() => {
+    const stored = localStorage.getItem("tmdb_session_id");
+    if (stored) setSessionId(stored);
+  }, []);
 
   useEffect(() => {
     if (sessionId && !user) {
@@ -28,7 +33,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         }
       });
     }
-  }, [sessionId]);
+  }, [sessionId, user]);
 
   const login = async () => {
     try {

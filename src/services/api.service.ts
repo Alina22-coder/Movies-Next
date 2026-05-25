@@ -1,70 +1,60 @@
-import { IGenre } from "../models/IGenre";
-
 const TMDB_BASE_URL = "https://api.themoviedb.org/3";
-const TMDB_TOKEN = import.meta.env.VITE_TMDB_TOKEN as string;
 
-const authHeaders = {
-  Authorization: `Bearer ${TMDB_TOKEN}`,
-};
+const getToken = () =>
+  process.env.NEXT_PUBLIC_TMDB_TOKEN ?? process.env.TMDB_TOKEN ?? "";
+
+const authHeaders = () => ({
+  Authorization: `Bearer ${getToken()}`,
+});
 
 export const getMovies = async (page = 1) => {
   const response = await fetch(`${TMDB_BASE_URL}/discover/movie?page=${page}`, {
-    headers: authHeaders,
+    headers: authHeaders(),
   });
-  const data = await response.json();
-  return data;
+  return response.json();
 };
 
 export const getMoviesByGenre = async (genreId: number | string, page = 1) => {
   const response = await fetch(
     `${TMDB_BASE_URL}/discover/movie?with_genres=${genreId}&page=${page}`,
-    { headers: authHeaders },
+    { headers: authHeaders() },
   );
-  return await response.json();
+  return response.json();
 };
 
 export const getMovieById = async (movieId: number | string) => {
   const response = await fetch(`${TMDB_BASE_URL}/movie/${movieId}`, {
-    headers: authHeaders,
+    headers: authHeaders(),
   });
-  return await response.json();
+  return response.json();
 };
 
-export const getGenres = async (): Promise<IGenre[]> => {
+export const getGenres = async () => {
   const response = await fetch(`${TMDB_BASE_URL}/genre/movie/list`, {
-    headers: authHeaders,
+    headers: authHeaders(),
   });
   const data = await response.json();
   return data.genres;
 };
 
-export const getGenreById = async (genreId: number) => {
-  const response = await fetch(`${TMDB_BASE_URL}/genre/movie/list`, {
-    headers: authHeaders,
-  });
-  const data = await response.json();
-  const genre = data.genres.find((item: IGenre) => item.id === genreId);
-  return genre;
-};
-
 export const getMoviesByCategory = async (endpoint: string) => {
   const response = await fetch(`${TMDB_BASE_URL}/movie/${endpoint}`, {
-    headers: authHeaders,
+    headers: authHeaders(),
   });
-  return await response.json();
+  return response.json();
 };
 
 export const searchMovies = async (query: string, page = 1) => {
   const response = await fetch(
     `${TMDB_BASE_URL}/search/movie?query=${encodeURIComponent(query)}&page=${page}`,
-    { headers: authHeaders },
+    { headers: authHeaders() },
   );
-  return await response.json();
+  return response.json();
 };
 
 export const createRequestToken = async (): Promise<string> => {
   const response = await fetch(`${TMDB_BASE_URL}/authentication/token/new`, {
-    headers: authHeaders,
+    headers: authHeaders(),
   });
   const data = await response.json();
   if (!data.success || !data.request_token) {
@@ -76,7 +66,7 @@ export const createRequestToken = async (): Promise<string> => {
 export const createSession = async (requestToken: string): Promise<string> => {
   const response = await fetch(`${TMDB_BASE_URL}/authentication/session/new`, {
     method: "POST",
-    headers: { ...authHeaders, "Content-Type": "application/json" },
+    headers: { ...authHeaders(), "Content-Type": "application/json" },
     body: JSON.stringify({ request_token: requestToken }),
   });
   const data = await response.json();
@@ -89,7 +79,7 @@ export const createSession = async (requestToken: string): Promise<string> => {
 export const getAccount = async (sessionId: string) => {
   const response = await fetch(
     `${TMDB_BASE_URL}/account?session_id=${sessionId}`,
-    { headers: authHeaders },
+    { headers: authHeaders() },
   );
-  return await response.json();
+  return response.json();
 };

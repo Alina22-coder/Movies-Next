@@ -1,0 +1,7 @@
+.posterPreview {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+  display: block;
+}

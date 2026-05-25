@@ -1,10 +1,9 @@
-import { IGenre } from "../../models/IGenre";
-import { IMovie } from "../../models/IMovie";
-import { GenreBadge } from "../genre-badge/GenreBadge";
-import { StarsRating } from "../stars-rating/StarsRating";
+import Image from "next/image";
+import { IGenre } from "@/models/IGenre";
+import { IMovie } from "@/models/IMovie";
+import { GenreBadge } from "@/components/genre-badge/GenreBadge";
+import { StarsRating } from "@/components/stars-rating/StarsRating";
 import styles from "./MovieInfo.module.css";
-
-const TMDB_IMAGE_BASE = "https://image.tmdb.org/t/p/w500";
 
 type MovieInfoProp = {
   movie: IMovie;
@@ -22,10 +21,12 @@ export const MovieInfo = ({ movie, genres = [] }: MovieInfoProp) => {
     <div className={styles.container}>
       <div className={styles.poster}>
         {movie.poster_path ? (
-          <img
-            src={`${TMDB_IMAGE_BASE}${movie.poster_path}`}
+          <Image
+            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
             alt={movie.title}
             className={styles.image}
+            width={300}
+            height={450}
           />
         ) : (
           <div className={styles.noImage}>No Image</div>

@@ -5,43 +5,43 @@
   color: #fff;
 }
 
-.footer__top {
+.footerTop {
   display: flex;
   justify-content: space-between;
   gap: 40px;
   margin-bottom: 40px;
 }
 
-.footer__brand {
+.footerBrand {
   display: flex;
   flex-direction: column;
   gap: 16px;
   max-width: 280px;
 }
 
-.footer__logo_link {
+.footerLogoLink {
   display: block;
 }
 
-.footer__desc {
+.footerDesc {
   font-size: 14px;
   color: #666;
   line-height: 1.6;
   margin: 0;
 }
 
-.footer__cols {
+.footerCols {
   display: flex;
   gap: 60px;
 }
 
-.footer__col {
+.footerCol {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.footer__col_title {
+.footerColTitle {
   font-size: 13px;
   font-weight: 600;
   color: #fff;
@@ -50,25 +50,25 @@
   margin-bottom: 4px;
 }
 
-.footer__link {
+.footerLink {
   font-size: 14px;
   color: #888;
   text-decoration: none;
   transition: color 0.2s;
 }
 
-.footer__link:hover,
-.footer__link.active {
+.footerLink:hover,
+.footerLink:global(.active) {
   color: #fff;
 }
 
-.footer__social {
+.footerSocial {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.footer__bottom {
+.footerBottom {
   border-top: 1px solid #1f1f1f;
   padding-top: 20px;
   display: flex;
@@ -76,12 +76,12 @@
   align-items: center;
 }
 
-.footer__copy {
+.footerCopy {
   font-size: 13px;
   color: #555;
 }
 
-.footer__powered {
+.footerPowered {
   font-size: 13px;
   color: #444;
 }
@@ -90,20 +90,16 @@
   .footer {
     padding: 36px 20px 20px;
   }
-
-  .footer__top {
+  .footerTop {
     flex-direction: column;
   }
-
-  .footer__brand {
+  .footerBrand {
     max-width: 100%;
   }
-
-  .footer__cols {
+  .footerCols {
     gap: 32px;
   }
-
-  .footer__bottom {
+  .footerBottom {
     flex-direction: column;
     align-items: flex-start;
     gap: 6px;

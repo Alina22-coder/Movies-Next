@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import styles from "./GenreBadge.module.css";
 
 type GenreBadgeProps = {
@@ -8,7 +8,7 @@ type GenreBadgeProps = {
 
 export const GenreBadge = ({ id, name }: GenreBadgeProps) => {
   return (
-    <Link to={`/genre/${id}`} className={styles.badge}>
+    <Link href={`/genre/${id}`} className={styles.badge}>
       {name}
     </Link>
   );

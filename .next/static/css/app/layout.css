@@ -1,0 +1,416 @@
+/*!***********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./src/components/footer/Footer.module.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************/
+.Footer_footer__4ORg_ {
+  background: #0f0f0f;
+  border-top: 1px solid #1f1f1f;
+  padding: 48px 0 24px;
+  color: #fff;
+}
+
+.Footer_footerTop__i3Ws_ {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.Footer_footerBrand__gJkRW {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 280px;
+}
+
+.Footer_footerLogoLink__eehEk {
+  display: block;
+}
+
+.Footer_footerDesc__aSODM {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.Footer_footerCols__ycFJN {
+  display: flex;
+  gap: 60px;
+}
+
+.Footer_footerCol__Avpsx {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.Footer_footerColTitle__S5ERn {
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.Footer_footerLink__PuzKS {
+  font-size: 14px;
+  color: #888;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.Footer_footerLink__PuzKS:hover,
+.Footer_footerLink__PuzKS.active {
+  color: #fff;
+}
+
+.Footer_footerSocial__YiPKO {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.Footer_footerBottom__A1Xh3 {
+  border-top: 1px solid #1f1f1f;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Footer_footerCopy__adLER {
+  font-size: 13px;
+  color: #555;
+}
+
+.Footer_footerPowered__tVE0S {
+  font-size: 13px;
+  color: #444;
+}
+
+@media (max-width: 768px) {
+  .Footer_footer__4ORg_ {
+    padding: 36px 20px 20px;
+  }
+  .Footer_footerTop__i3Ws_ {
+    flex-direction: column;
+  }
+  .Footer_footerBrand__gJkRW {
+    max-width: 100%;
+  }
+  .Footer_footerCols__ycFJN {
+    gap: 32px;
+  }
+  .Footer_footerBottom__A1Xh3 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
+
+/*!*****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./src/app/globals.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************/
+:root {
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #fff;
+  --border: #e5e4e7;
+  --accent: #007aff;
+  --sans: system-ui, "Segoe UI", Roboto, sans-serif;
+  --heading: system-ui, "Segoe UI", Roboto, sans-serif;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    font-size: 16px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: #fff;
+  margin: 0;
+  padding: 20px 40px;
+  background: #0f0f0f;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 900px) {
+  body {
+    padding: 10px;
+  }
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+}
+
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+}
+
+@media (max-width: 1024px) {
+  h2 {
+    font-size: 20px;
+  }
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/*!****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./src/components/user-info/UserInfo.module.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************/
+.UserInfo_container__TcGOz {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+.UserInfo_avatarBtn__M2iY8 {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 50%;
+}
+
+.UserInfo_avatar__3X3EW {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #007aff;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.UserInfo_avatarImg__p_ZDJ {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.UserInfo_name__gTsIx {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.UserInfo_loginBtn__rRBgs {
+  background: #007aff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.UserInfo_loginBtn__rRBgs:hover {
+  background: #005ecb;
+}
+
+.UserInfo_dropdown__Mjm7K {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 140px;
+  z-index: 200;
+}
+
+.UserInfo_dropdownNameMobile__hZlF3 {
+  font-size: 13px;
+  color: #aaa;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .UserInfo_dropdownNameMobile__hZlF3 {
+    display: block;
+  }
+  .UserInfo_name__gTsIx {
+    display: none;
+  }
+  .UserInfo_loginBtn__rRBgs {
+    font-size: 13px;
+    padding: 5px 12px;
+  }
+  .UserInfo_dropdownLogout__Y2SHA {
+    font-size: 12px;
+  }
+}
+
+.UserInfo_dropdownLogout__Y2SHA {
+  background: transparent;
+  color: #ff4d4d;
+  border: 1px solid #ff4d4d44;
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.UserInfo_dropdownLogout__Y2SHA:hover {
+  background: #ff4d4d22;
+}
+
+/*!***********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./src/components/header/Header.module.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************/
+.Header_header__TsQ2I {
+  background: #0f0f0f;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.Header_logoLink__jC9_N {
+  flex-shrink: 0;
+}
+
+.Header_logo___CXuk {
+  display: block;
+}
+
+.Header_nav__Yrfdd {
+  flex-shrink: 0;
+}
+
+.Header_navList__lfQ_o {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.Header_navLink__rYmd1 {
+  font-size: 15px;
+  font-weight: 500;
+  color: #aaa;
+  text-decoration: none;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.Header_navLink__rYmd1:hover {
+  color: #fff;
+}
+
+.Header_navLinkActive__zwiGk {
+  color: #fff;
+  border-bottom: 2px solid #007aff;
+  padding-bottom: 2px;
+}
+
+.Header_search__1szDk {
+  margin-left: auto;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  width: 220px;
+  min-width: 0;
+  transition: border-color 0.2s;
+}
+
+.Header_search__1szDk:focus {
+  border-color: #007aff;
+}
+
+.Header_search__1szDk::placeholder {
+  color: #666;
+}
+
+@media (max-width: 600px) {
+  .Header_header__TsQ2I {
+    gap: 8px;
+    row-gap: 8px;
+  }
+  .Header_navLink__rYmd1 {
+    font-size: 13px;
+  }
+  .Header_search__1szDk {
+    order: 3;
+    width: 100%;
+    margin-left: 0;
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+  .Header_userInfo__c2Meh {
+    margin-left: auto;
+  }
+}
+

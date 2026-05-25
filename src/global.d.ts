@@ -1,8 +1,0 @@
-/// <reference types="vite/client" />
-
-declare module "*.module.css";
-declare module "*.css";
-declare module "*.svg" {
-  const src: string;
-  export default src;
-}

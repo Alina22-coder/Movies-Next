@@ -74,7 +74,7 @@
   z-index: 200;
 }
 
-.dropdown__name_mobile {
+.dropdownNameMobile {
   font-size: 13px;
   color: #aaa;
   white-space: nowrap;
@@ -84,12 +84,22 @@
 }
 
 @media (max-width: 600px) {
-  .dropdown__name_mobile {
+  .dropdownNameMobile {
     display: block;
+  }
+  .name {
+    display: none;
+  }
+  .loginBtn {
+    font-size: 13px;
+    padding: 5px 12px;
+  }
+  .dropdownLogout {
+    font-size: 12px;
   }
 }
 
-.dropdown__logout {
+.dropdownLogout {
   background: transparent;
   color: #ff4d4d;
   border: 1px solid #ff4d4d44;
@@ -100,22 +110,6 @@
   transition: background 0.2s;
 }
 
-.dropdown__logout:hover {
+.dropdownLogout:hover {
   background: #ff4d4d22;
 }
-
-@media (max-width: 600px) {
-  .name {
-    display: none;
-  }
-
-  .loginBtn {
-    font-size: 13px;
-    padding: 5px 12px;
-  }
-
-  .dropdown__logout {
-    font-size: 12px;
-  }
-}
-

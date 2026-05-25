@@ -19,7 +19,7 @@
   flex-shrink: 0;
 }
 
-.nav__list {
+.navList {
   display: flex;
   align-items: center;
   gap: 24px;
@@ -27,7 +27,7 @@
   padding: 0;
 }
 
-.nav__link {
+.navLink {
   font-size: 15px;
   font-weight: 500;
   color: #aaa;
@@ -36,11 +36,11 @@
   white-space: nowrap;
 }
 
-.nav__link:hover {
+.navLink:hover {
   color: #fff;
 }
 
-.nav__link_active {
+.navLinkActive {
   color: #fff;
   border-bottom: 2px solid #007aff;
   padding-bottom: 2px;
@@ -73,15 +73,9 @@
     gap: 8px;
     row-gap: 8px;
   }
-
-  .nav {
-    margin-left: 0;
-  }
-
-  .nav__link {
+  .navLink {
     font-size: 13px;
   }
-
   .search {
     order: 3;
     width: 100%;
@@ -89,7 +83,6 @@
     font-size: 13px;
     padding: 6px 10px;
   }
-
   .userInfo {
     margin-left: auto;
   }

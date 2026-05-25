@@ -1,0 +1,187 @@
+/*!********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./src/components/genre-badge/GenreBadge.module.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************/
+.GenreBadge_badge__5W6iV {
+  display: inline-block;
+  white-space: nowrap;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background: rgba(0, 122, 255, 0.1);
+  border: 1px solid rgba(0, 122, 255, 0.35);
+  color: #007AFF;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.GenreBadge_badge__5W6iV:hover {
+  background: rgba(0, 122, 255, 0.2);
+  color: #fff;
+}
+
+/*!******************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./src/components/movie-info/MovieInfo.module.css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************/
+.MovieInfo_container__DRvYt {
+  display: flex;
+  gap: 40px;
+  padding: 40px 0;
+  align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+  .MovieInfo_container__DRvYt {
+    flex-direction: column;
+    padding: 20px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .MovieInfo_container__DRvYt {
+    gap: 20px;
+    padding: 12px 0;
+  }
+}
+
+.MovieInfo_poster__P5810 {
+  flex-shrink: 0;
+  width: 300px;
+}
+
+@media (max-width: 768px) {
+  .MovieInfo_poster__P5810 {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+.MovieInfo_image__CaMe0 {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+
+.MovieInfo_noImage__JBgPX {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  background: #2a2a2a;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-size: 14px;
+}
+
+.MovieInfo_info__TuAMi {
+  flex: 1 1;
+  min-width: 0;
+}
+
+.MovieInfo_title__jKHc_ {
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 6px;
+  line-height: 1.2;
+}
+
+@media (max-width: 600px) {
+  .MovieInfo_title__jKHc_ {
+    font-size: 22px;
+  }
+}
+
+.MovieInfo_year__E5a3F {
+  font-weight: 400;
+  color: #999;
+}
+
+.MovieInfo_originalTitle__RvsZO {
+  color: #888;
+  font-style: italic;
+  margin: 0 0 16px;
+  font-size: 15px;
+}
+
+@media (max-width: 600px) {
+  .MovieInfo_originalTitle__RvsZO {
+    font-size: 13px;
+  }
+}
+
+.MovieInfo_badges__D_ah9 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.MovieInfo_rating__BE2jq {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.MovieInfo_voteCount__mrJYp {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.MovieInfo_section__S53T7 {
+  margin-bottom: 24px;
+}
+
+.MovieInfo_sectionTitle__dFDxU {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 8px;
+}
+
+@media (max-width: 600px) {
+  .MovieInfo_sectionTitle__dFDxU {
+    font-size: 15px;
+  }
+}
+
+.MovieInfo_overview__uyXhn {
+  color: #ccc;
+  line-height: 1.7;
+  margin: 0;
+  font-size: 16px;
+}
+
+@media (max-width: 600px) {
+  .MovieInfo_overview__uyXhn {
+    font-size: 13px;
+  }
+}
+
+.MovieInfo_meta__JWF7f {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.MovieInfo_metaItem___3y72 {
+  display: flex;
+  gap: 12px;
+  font-size: 15px;
+}
+
+@media (max-width: 600px) {
+  .MovieInfo_metaItem___3y72 {
+    font-size: 13px;
+  }
+}
+
+.MovieInfo_metaLabel__ok_KK {
+  color: #888;
+  min-width: 110px;
+  flex-shrink: 0;
+}
+
