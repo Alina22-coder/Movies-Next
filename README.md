@@ -92,7 +92,7 @@ npm install
 NEXT_PUBLIC_TMDB_TOKEN=your_tmdb_bearer_token
 ```
 
-Токен можна отримати на [TMDB → Settings → API](https://www.themoviedb.org/settings/api).
+Токен використовується виключно для запитів до TMDB API (фільми, жанри, пошук). Отримати можна на [TMDB → Settings → API](https://www.themoviedb.org/settings/api).
 
 ### 4. Запуск у режимі розробки
 
