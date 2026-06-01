@@ -1,52 +1,5 @@
 {
-  "node": {
-    "7f11085957b352d5b3a81d053a614633d666504da6": {
-      "workers": {
-        "app/(public)/movies/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Faburlakova%2FMovies-Next%2Fsrc%2Fserver-actions%2FauthActions.ts%22%2C%5B%7B%22id%22%3A%227f11085957b352d5b3a81d053a614633d666504da6%22%2C%22exportedName%22%3A%22login%22%2C%22filename%22%3A%22server-actions%2FauthActions.ts%22%7D%2C%7B%22id%22%3A%227f9c51c1731b9b64d2040ad2f145f3e0200e6ee01d%22%2C%22exportedName%22%3A%22logout%22%2C%22filename%22%3A%22server-actions%2FauthActions.ts%22%7D%5D%5D%5D&__client_imported__=true!",
-          "async": false
-        },
-        "app/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Faburlakova%2FMovies-Next%2Fsrc%2Fserver-actions%2FauthActions.ts%22%2C%5B%7B%22id%22%3A%227f11085957b352d5b3a81d053a614633d666504da6%22%2C%22exportedName%22%3A%22login%22%2C%22filename%22%3A%22server-actions%2FauthActions.ts%22%7D%2C%7B%22id%22%3A%227f9c51c1731b9b64d2040ad2f145f3e0200e6ee01d%22%2C%22exportedName%22%3A%22logout%22%2C%22filename%22%3A%22server-actions%2FauthActions.ts%22%7D%5D%5D%5D&__client_imported__=true!",
-          "async": false
-        },
-        "app/(public)/movie/[id]/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Faburlakova%2FMovies-Next%2Fsrc%2Fserver-actions%2FauthActions.ts%22%2C%5B%7B%22id%22%3A%227f11085957b352d5b3a81d053a614633d666504da6%22%2C%22exportedName%22%3A%22login%22%2C%22filename%22%3A%22server-actions%2FauthActions.ts%22%7D%2C%7B%22id%22%3A%227f9c51c1731b9b64d2040ad2f145f3e0200e6ee01d%22%2C%22exportedName%22%3A%22logout%22%2C%22filename%22%3A%22server-actions%2FauthActions.ts%22%7D%5D%5D%5D&__client_imported__=true!",
-          "async": false
-        }
-      },
-      "layer": {
-        "app/(public)/movies/page": "action-browser",
-        "app/page": "action-browser",
-        "app/(public)/movie/[id]/page": "action-browser"
-      },
-      "filename": "server-actions/authActions.ts",
-      "exportedName": "login"
-    },
-    "7f9c51c1731b9b64d2040ad2f145f3e0200e6ee01d": {
-      "workers": {
-        "app/(public)/movies/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Faburlakova%2FMovies-Next%2Fsrc%2Fserver-actions%2FauthActions.ts%22%2C%5B%7B%22id%22%3A%227f11085957b352d5b3a81d053a614633d666504da6%22%2C%22exportedName%22%3A%22login%22%2C%22filename%22%3A%22server-actions%2FauthActions.ts%22%7D%2C%7B%22id%22%3A%227f9c51c1731b9b64d2040ad2f145f3e0200e6ee01d%22%2C%22exportedName%22%3A%22logout%22%2C%22filename%22%3A%22server-actions%2FauthActions.ts%22%7D%5D%5D%5D&__client_imported__=true!",
-          "async": false
-        },
-        "app/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Faburlakova%2FMovies-Next%2Fsrc%2Fserver-actions%2FauthActions.ts%22%2C%5B%7B%22id%22%3A%227f11085957b352d5b3a81d053a614633d666504da6%22%2C%22exportedName%22%3A%22login%22%2C%22filename%22%3A%22server-actions%2FauthActions.ts%22%7D%2C%7B%22id%22%3A%227f9c51c1731b9b64d2040ad2f145f3e0200e6ee01d%22%2C%22exportedName%22%3A%22logout%22%2C%22filename%22%3A%22server-actions%2FauthActions.ts%22%7D%5D%5D%5D&__client_imported__=true!",
-          "async": false
-        },
-        "app/(public)/movie/[id]/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Faburlakova%2FMovies-Next%2Fsrc%2Fserver-actions%2FauthActions.ts%22%2C%5B%7B%22id%22%3A%227f11085957b352d5b3a81d053a614633d666504da6%22%2C%22exportedName%22%3A%22login%22%2C%22filename%22%3A%22server-actions%2FauthActions.ts%22%7D%2C%7B%22id%22%3A%227f9c51c1731b9b64d2040ad2f145f3e0200e6ee01d%22%2C%22exportedName%22%3A%22logout%22%2C%22filename%22%3A%22server-actions%2FauthActions.ts%22%7D%5D%5D%5D&__client_imported__=true!",
-          "async": false
-        }
-      },
-      "layer": {
-        "app/(public)/movies/page": "action-browser",
-        "app/page": "action-browser",
-        "app/(public)/movie/[id]/page": "action-browser"
-      },
-      "filename": "server-actions/authActions.ts",
-      "exportedName": "logout"
-    }
-  },
+  "node": {},
   "edge": {},
   "encryptionKey": "CWA8mIsa4FJggZG5sJE0axLYTTkzjzVQGguBartMGFY="
 }

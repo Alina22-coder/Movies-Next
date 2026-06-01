@@ -1,15 +1,12 @@
-import React from 'react';
-import {cookies} from "next/headers";
-import {UserInfoClient} from "./UserInfoClient";
+import styles from "./UserInfo.module.css";
 
-const UserInfo = async () => {
-    const cookieStore = await cookies();
-    const userCookie = cookieStore.get('user');
-    const user = userCookie ? JSON.parse(userCookie.value) : null;
-
-    if (!user) return null;
-
-    return <UserInfoClient name={user.name}/>;
-}
+const UserInfo = () => {
+    return (
+        <div className={styles.container}>
+            <div className={styles.avatar}>A</div>
+            <span className={styles.name}>Admin</span>
+        </div>
+    );
+};
 
 export {UserInfo};

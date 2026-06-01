@@ -9,18 +9,15 @@
 - Пагінація результатів
 - Детальна сторінка кожного фільму з рейтингом, жанрами, описом
 - Перегляд фільмів за жанром
-- Авторизація (логін / логаут) з захистом роутів через middleware
-- Дропдаун меню користувача в хедері
+- UserInfo компонент у хедері (аватар + ім'я)
 
 ## Технології
 
 - **Next.js 15** + **React 19** + **TypeScript**
 - **App Router** — серверні компоненти, layouts, dynamic routes, route groups
-- **Server Actions** — авторизація через `'use server'`
-- **Middleware** — захист приватних роутів
 - **CSS Modules** — стилізація компонентів
 - **Swiper** — каруселі на головній сторінці
-- **TMDB API** — джерело даних
+- **TMDB API** — джерело даних (Bearer token авторизація)
 
 ## Структура проекту
 
@@ -29,30 +26,24 @@ src/
 ├── app/
 │   ├── layout.tsx                  # Кореневий layout (Header, Footer, metadata)
 │   ├── page.tsx                    # Головна сторінка
-│   ├── auth/
-│   │   ├── layout.tsx              # Layout для сторінки входу
-│   │   └── page.tsx                # Форма входу
-│   └── (public)/                   # Route group для захищених роутів
+│   └── (public)/                   # Route group
 │       ├── movies/                 # Список фільмів + пошук + фільтр жанрів
 │       ├── movie/[id]/             # Деталі фільму (dynamic route)
 │       ├── genres/                 # Список жанрів
 │       └── genre/[id]/             # Фільми за жанром (dynamic route)
 ├── components/
 │   ├── header/                     # Хедер: лого, меню, пошук, UserInfo
-│   ├── footer/                     # Футер: навігація, соцмережі
-│   ├── menu/                       # Навігаційне меню з активним станом
+│   ├── footer/                     # Футер
+│   ├── menu/                       # Навігаційне меню
 │   ├── home/                       # Каруселі за категоріями
-│   ├── movies-list/                # Список фільмів, GenreFilter, Pagination
-│   ├── movies-list-card/           # Картка фільму з forward-data посиланням
+│   ├── movies-list/                # MoviesList, GenreFilter, Pagination
+│   ├── movies-list-card/           # Картка фільму
 │   ├── movie-info/                 # Детальна інформація про фільм
 │   ├── genres/                     # Грід жанрів
 │   ├── genre-badge/                # Бейдж жанру
 │   ├── poster-preview/             # Постер фільму
 │   ├── stars-rating/               # Зірковий рейтинг
-│   └── user-info/                  # Аватар + дропдаун з logout
-├── middleware.ts                   # Захист роутів: редирект на /auth без cookie
-├── server-actions/
-│   └── authActions.ts              # login / logout server actions
+│   └── user-info/                  # Аватар + ім'я користувача
 ├── services/
 │   └── api.service.ts              # Fetch-запити до TMDB з revalidate
 └── models/                         # TypeScript-інтерфейси IMovie, IGenre
@@ -67,7 +58,6 @@ src/
 | `/movie/[id]` | Деталі фільму |
 | `/genres` | Список жанрів |
 | `/genre/[id]` | Фільми за жанром |
-| `/auth` | Сторінка входу |
 
 ## Запуск
 
@@ -86,13 +76,15 @@ npm install
 
 ### 3. Налаштування змінних середовища
 
-Створіть файл `.env.local` у корені проекту:
+Створіть файл `.env` у корені проекту:
 
 ```env
-NEXT_PUBLIC_TMDB_TOKEN=your_tmdb_bearer_token
+TMDB_TOKEN=your_tmdb_bearer_token
 ```
 
-Токен використовується виключно для запитів до TMDB API (фільми, жанри, пошук). Отримати можна на [TMDB → Settings → API](https://www.themoviedb.org/settings/api).
+Або використовуйте `NEXT_PUBLIC_TMDB_TOKEN` — обидва варіанти підтримуються.
+
+Токен використовується для запитів до TMDB API (фільми, жанри, пошук). Отримати можна на [TMDB → Settings → API](https://www.themoviedb.org/settings/api).
 
 ### 4. Запуск у режимі розробки
 
@@ -100,18 +92,11 @@ NEXT_PUBLIC_TMDB_TOKEN=your_tmdb_bearer_token
 npm run dev
 ```
 
+Відкрийте [http://localhost:3000](http://localhost:3000).
+
 ### 5. Збірка для production
 
 ```bash
 npm run build
 npm run start
 ```
-
-## Авторизація
-
-Застосунок використовує просту форму входу:
-
-- Логін: `admin`
-- Пароль: `1234`
-
-Після входу сесія зберігається в `httpOnly` cookie. Middleware захищає всі роути крім `/auth` — неавторизований користувач автоматично перенаправляється на сторінку входу.

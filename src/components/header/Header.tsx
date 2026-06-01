@@ -1,16 +1,12 @@
 import React from 'react';
 import Link from "next/link";
 import {Suspense} from "react";
-import {cookies} from "next/headers";
 import {Menu} from "@/components/menu/Menu";
 import {SearchInput} from "./SearchInput";
 import {UserInfo} from "@/components/user-info/UserInfo";
 import styles from "./Header.module.css";
 
-const Header = async () => {
-    const cookieStore = await cookies();
-    const isLoggedIn = cookieStore.has('user');
-
+const Header = () => {
     return (
         <header className={styles.header}>
             <Link href="/" className={styles.logoLink}>
@@ -33,21 +29,17 @@ const Header = async () => {
                 </svg>
             </Link>
 
-            {isLoggedIn && (
-                <>
-                    <nav className={styles.nav}>
-                        <Menu/>
-                    </nav>
+            <nav className={styles.nav}>
+                <Menu/>
+            </nav>
 
-                    <Suspense>
-                        <SearchInput/>
-                    </Suspense>
+            <Suspense>
+                <SearchInput/>
+            </Suspense>
 
-                    <div className={styles.userInfo}>
-                        <UserInfo/>
-                    </div>
-                </>
-            )}
+            <div className={styles.userInfo}>
+                <UserInfo/>
+            </div>
         </header>
     );
 };
